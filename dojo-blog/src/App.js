@@ -1,6 +1,9 @@
 
 import Navbar from './Navbar';
 import Home from './Home';
+import {BrowserRouter as Router, Route, Switch} from 'rect-router-dom';
+
+
 function App() {
   
 	const txt   = "welcome";
