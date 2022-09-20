@@ -1,29 +1,17 @@
 import { useState } from "react"
-
+import List from "./List";
 const Home = () => {
-    
-    const START = 5;
-    let val =START
-    let num1 = START, num2 = START;
-    console.log(val)
-    const [num, setNum] = useState(START)
+    const [blogs,setBlogs] = useState([
+        { id: 1, title : "title-01", body : "lorem ipsum 01 ... ", author : "author - 01" },
+        { id: 2, title : "title-02", body : "lorem ipsum 02 ... ", author : "author - 02" },
+        { id: 3, title : "title-03", body : "lorem ipsum 03 ... ", author : "author - 03" },
 
-    if( num !== val){
-        val = num;
-        num1 = parseInt(Math.random()*1000)
-        num2 = parseInt(Math.random()*1000)
-    }
-    const handleClick = (event) => {
-        setNum(parseInt(Math.random()*1000))
-		console.log("button clicked "+num+" target: ",event.target);
-	}
+    ]);
+
 
     return (
         <div className="home">
-            <h2>{num1}</h2>
-            <h2>{num2}</h2>
-
-            <button onClick={ (event) => handleClick(event) }> button </button>
+            <List list={ blogs }></List>
         </div>
     );
 }
