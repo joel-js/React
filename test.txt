@@ -1,2 +1,5 @@
 test
+npm install
 npx json-server --watch data/db.json --port 8000
+npx create-react-app [app-name]
+npm install react-router-dom
