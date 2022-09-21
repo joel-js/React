@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const List = ({list,mainTitle,deleteItem}) => {
 
     return (
@@ -10,8 +12,10 @@ const List = ({list,mainTitle,deleteItem}) => {
                     // console.log("yees",deletevisibility)
 
                     return  <div className="item-preview" key={ item.id } >
-                                <h2>{ item.title }</h2>
-                                <p>written by { item.author }</p>
+                                <Link exact to={ 'blogs/'+item.id }>
+                                    <h2>{ item.title }</h2>
+                                    <p>written by { item.author }</p>
+                                </Link>
                                 <button onClick={ () => deleteItem(item.id) } >delete</button>
                             </div>
                 })}

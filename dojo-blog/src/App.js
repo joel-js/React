@@ -1,8 +1,9 @@
 
 import Navbar from './Navbar';
 import Home from './Home';
-import {BrowserRouter as Router, Route, Switch} from 'rect-router-dom';
-
+import Create from './Create';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Detail from './Detail';
 
 function App() {
   
@@ -14,13 +15,18 @@ function App() {
 	
 
   return (
-   	<div className='App'>
-   		<Navbar></Navbar>
-   		<div className="content">
-      			<Home></Home>
-					
-      	</div>
-    </div>
+	<Router>
+		<div className='App'>
+			<Navbar></Navbar>
+			<div className="content">
+					<Switch>
+						<Route exact path="/"> <Home></Home> </Route>
+						<Route exact path="/create"> <Create></Create> </Route>
+						<Route exact path="/blogs/:id"> <Detail></Detail> </Route>
+					</Switch>
+			</div>
+		</div>
+	</Router>
   );
 }
 
