@@ -3,14 +3,16 @@ import { useState, useEffect} from 'react';
 const useFetch = (url) => {
     const [data, setData] = useState(null)
     const [isPending, setIspending] = useState(true)
-    const [error, setError] = useState(true)
+    const [error, setError] = useState(false)
     useEffect( () => {
-        const abortController =new AbortController();
+        //const abortController =new AbortController();
         setTimeout( () => {
 
-            fetch(url,{ signal: abortController.signal })
+            fetch(url) // { signal: abortController.signal }
             .then( res => {
-                if( !res.ok) throw new Error(" Some Error occured")
+                console.log(res.status)
+                if( !res.ok) throw Error(" Some Error occured")
+                
                 return res.json()
             })
             .then(data => {
@@ -18,15 +20,27 @@ const useFetch = (url) => {
                 setData(data)
             })
             .catch( err => {
-                if(err.name !== 'AbortError'){
+                if(err.message === "Failed to fetch"){
+                    
                     setIspending(false)
-                    setError(err.msg)
+                    setError("Error: Server down !!!")
                 }
-                else console.log("fetch Aborted")
+                else{
+                    setIspending(false)
+                    setError(err.message)
+                }
+                // if(err.name !== 'AbortError'){
+                //     setIspending(false)
+                //     setError(err.msg)
+                // }
+                // else {
+                //     console.log("Error" + err.msg)
+                //     setError(err.msg)
+                // }
             })
 
         },1000)
-        return () => abortController.abort();
+        //return () => abortController.abort();
     },[url])
        
     return {data, setData, isPending, error}

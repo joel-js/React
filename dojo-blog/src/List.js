@@ -12,7 +12,7 @@ const List = ({list,mainTitle,deleteItem}) => {
                     // console.log("yees",deletevisibility)
 
                     return  <div className="item-preview" key={ item.id } >
-                                <Link exact to={ 'blogs/'+item.id }>
+                                <Link to={ 'blogs/'+item.id }>
                                     <h2>{ item.title }</h2>
                                     <p>written by { item.author }</p>
                                 </Link>

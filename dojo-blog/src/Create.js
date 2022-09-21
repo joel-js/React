@@ -1,14 +1,35 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
     const [title,setTitle] =useState("");
-    const [content,setContent] =useState("");
+    const [body,setContent] =useState("");
     const [author,setAuthor] =useState("mario");
-
+    const [isPending, setIsPending] =useState(false)
+    const history =useHistory();
     const handleSubmit= (event) => {
+        
         event.preventDefault();
-        const blog = {title,content,author}
+        setIsPending(true)
+        const blog = {title,body,author}
         console.log(blog);
+
+        setTimeout( () =>{
+            fetch('http://localhost:8000/blogs',{
+                method  : 'POST',
+                headers : {
+                    "Content-Type": "application/json"
+                },
+                body    : JSON.stringify(blog)
+            })
+            .then( res => {
+                console.log(res)
+                setIsPending(false)
+                history.push('/')
+            })
+        },3000 )
+        
+    
     }
 
     return ( 
@@ -36,13 +57,10 @@ const Create = () => {
                     <option value="yoshi">yoshi</option>
                     <option value="mario">mario</option>
                 </select>
-                <input type="submit" value="Add Blog" className="submit"
-                />
+                {  !isPending && <button >Add Blog</button>}
+                {  isPending && <button disabled >Adding</button>}
+                
             </form>
-            <p>{title}</p>
-            <p>{content}</p>
-            <p>{author}</p>
-
         </div>
     );
 }

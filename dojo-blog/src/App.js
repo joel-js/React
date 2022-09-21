@@ -22,7 +22,7 @@ function App() {
 					<Switch>
 						<Route exact path="/"> <Home></Home> </Route>
 						<Route exact path="/create"> <Create></Create> </Route>
-						<Route exact path="/blogs/:id"> <Detail></Detail> </Route>
+						<Route path="/blogs/:id"> <Detail></Detail> </Route>
 					</Switch>
 			</div>
 		</div>

@@ -75,13 +75,24 @@
   box-sizing: border-box;
   display: block;
 }
-.submit{
+.create button{
   width: 25% !important;
   background: #f1356d;
-  margin-left: 40% !important;
+  /* margin-left: 40% !important; */
   color: #fff;
   border: 0 !important;
   padding: 8px !important;
   border-radius: 8px !important;
   cursor: pointer;
+}
+
+.create button:disabled{
+  width: 25% !important;
+  background: grey;
+  /* margin-left: 40% !important; */
+  color: #fff;
+  border: 0 !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  cursor: wait;
 }

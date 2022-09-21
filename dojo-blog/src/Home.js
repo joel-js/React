@@ -10,6 +10,7 @@ const Home = () => {
     const deleteBlog = (id) => {
         const newBlogs = blogs.filter( blog => blog.id !== id);
         setBlogs(newBlogs)
+        
     };
 
     return (

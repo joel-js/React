@@ -5,6 +5,8 @@ import useFetch from "./useFetch";
 const Detail = () => {
     const {id} = useParams();
     const {data:detail,isPending,error} = useFetch('http://localhost:8000/blogs/'+id);
+
+ 
     return (
         <div className="detail">
             { error && <div> {error} </div> }
