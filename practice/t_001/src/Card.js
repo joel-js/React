@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 
 const Card = () => {
     const [state,setState] =useState("");
-    let content ="I am a very simple card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively.";
+    let cont= "I am a very simple card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively.";
+    const [content,setContent] = useState("Hoola")
     useEffect( () => {
-        console.log(content)
-        content ="Nice";
-        console.log(content)
-
-    },[state])
+        setState("Maari");
+        
+    },[content])
     return (
         <div className="card white darken-1">
             <div className="card-content black-text">
@@ -16,7 +15,7 @@ const Card = () => {
                 <p>{content}</p>
             </div>
             <div className="card-action">
-                <button className="waves-effect waves-light btn" onClick ={ () => setState("change")}>Button</button>
+                <button className="waves-effect waves-light btn" onClick ={ () => setContent("nice")}>Button</button>
             </div>
         </div>
     );
