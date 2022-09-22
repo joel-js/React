@@ -14,8 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     setDisplay(
-        countArray
-        .map((key, index) => <Card key={key} />)
+        countArray.map((key, index) => <Card key={key} />)
     );
   }, [count]);
   return (

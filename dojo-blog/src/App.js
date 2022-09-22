@@ -4,6 +4,7 @@ import Home from './Home';
 import Create from './Create';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Detail from './Detail';
+import { CurrentUser } from './UserContext';
 
 function App() {
   
@@ -19,11 +20,13 @@ function App() {
 		<div className='App'>
 			<Navbar></Navbar>
 			<div className="content">
+				<CurrentUser.Provider value ="mario">
 					<Switch>
 						<Route exact path="/"> <Home></Home> </Route>
 						<Route exact path="/create"> <Create></Create> </Route>
 						<Route path="/blogs/:id"> <Detail></Detail> </Route>
 					</Switch>
+				</CurrentUser.Provider>
 			</div>
 		</div>
 	</Router>
