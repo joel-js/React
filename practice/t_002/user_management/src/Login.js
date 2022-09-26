@@ -1,22 +1,36 @@
-const Login = () => {
+import { useEffect, useState } from "react";
+
+const Login = ({getUserId}) => {
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    useEffect(() =>{
+        // console.log(username)
+        // console.log(password)
+    },[username,password])
+
+    const submitForm = () => {
+        getUserId(username,password)
+    }
+
     return (
         <div className="login">
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s4 offset-s4">
-                            <input id="username" type="text" class="validate" />
-                            <label for="username">user name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s4 offset-s4">
-                            <input id="password" type="password" class="validate" />
-                            <label for="password">password</label>
+            <div className="row">
+                <form className="col s12">
+                    <div className="row">
+                        <div className="input-field col s4 offset-s4">
+                            <input id="username" type="text" onBlur={ (event) => setUsername(event.target.value) }/>
+                            <label >user name</label>
                         </div>
                     </div>
                     <div className="row">
-                    <button class="waves-effect waves-light btn" onClick={ (event) => event.preventDefault() }>submit</button>
+                        <div className="input-field col s4 offset-s4">
+                            <input id="password" type="password" onBlur={ (event) => setPassword(event.target.value) } />
+                            <label >password</label>
+                        </div>
+                    </div>
+                    <div className="row">
+                    <button className="waves-effect waves-light btn" onClick={ (event) => {event.preventDefault(); submitForm() }}>submit</button>
                     </div>
                 </form>
             </div>
