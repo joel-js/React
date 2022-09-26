@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'
 
 const Login = ({getUserId}) => {
     const [username, setUsername] = useState(null);
@@ -30,7 +31,9 @@ const Login = ({getUserId}) => {
                         </div>
                     </div>
                     <div className="row">
+                   
                     <button className="waves-effect waves-light btn" onClick={ (event) => {event.preventDefault(); submitForm() }}>submit</button>
+                    <Link to ='/home'>go to home</Link>
                     </div>
                 </form>
             </div>
