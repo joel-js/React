@@ -3,6 +3,7 @@ import './App.css';
 import UserDetail from './UserDetail';
 import UserList from './UserList';
 import AddUser from './AddUser';
+import NotFound from './NotFound';
 function App() {
   return (
     <div className="App">
@@ -10,8 +11,10 @@ function App() {
         <Routes>
           <Route path ='/' element={ <Navigate to='/userList' /> } />
           <Route path ='/userlist' element={ <UserList />} />
-          <Route path ='/userlist/:id' element={ <UserDetail /> } />
-          <Route path ='/add' element={ <AddUser /> } />
+          <Route path ='/user/:id' element={ <UserDetail /> } />
+          <Route path ='/user/add' element={ <AddUser /> } />
+          <Route path ='*' element={ <NotFound /> } />
+
         </Routes>
       </BrowserRouter>
     </div>
