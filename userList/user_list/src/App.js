@@ -4,6 +4,7 @@ import UserDetail from './UserDetail';
 import UserList from './UserList';
 import AddUser from './AddUser';
 import NotFound from './NotFound';
+import Modal from './Delete';
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,8 @@ function App() {
           <Route path ='/userlist' element={ <UserList />} />
           <Route path ='/user/:id' element={ <UserDetail /> } />
           <Route path ='/user/add' element={ <AddUser /> } />
+          
+
           <Route path ='*' element={ <NotFound /> } />
 
         </Routes>

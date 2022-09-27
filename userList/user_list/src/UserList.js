@@ -1,18 +1,35 @@
+
+
+import UserRow from './UserRow';
+import useFetch from "./useFetch";
+
 const UserList = () => {
+    const { data: rows,setData:setRows,error} = useFetch('http://localhost:8000/userlist')
+
     return (
         <div className="userList">
             <h2>User List</h2>
-            <link className="waves-effect waves-light btn" href="#modal1"><i className="material-icons left">delete</i> delete </button>
             
-            <div key="modal1" className="modal">
-                <div className="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
-                </div>
-                <div className="modal-footer">
-                    <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <div className="row">
+                <div className="col s8 offset-s2">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Designation</th>
+                                <th><button className='waves-effect waves-light btn green'><i className="material-icons left">add</i>Add</button></th>
+                            </tr>
+                        </thead>
+
+                        
+                        { rows && <UserRow rows={ rows } setRows ={ setRows } ></UserRow>}
+                        
+                    </table>
                 </div>
             </div>
+             
         </div>
     );
 }

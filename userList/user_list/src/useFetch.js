@@ -1,9 +1,29 @@
-const useFetch = (url,type) => {
+import { useState, useEffect} from 'react';
 
-    const data="this is data", setData="this is to set data", error="this is error that happens";
-    
-    return {data, setData, error}
-     
+const useFetch = (url) => {
+    const [data, setData] = useState(null)
+    const [error,setError] = useState(false)
+    useEffect( () => {
+
+            fetch(url) 
+            .then( res => {
+                console.log(res.status)
+                if( !res.ok) throw Error(" Some Error occured")
+                
+                return res.json()
+            })
+            .then(data => {
+               
+                setData(data)
+            })
+            .catch( err => {
+                setError(true)
+                
+            })
+
+    },[url])
+       
+    return {data,setData,error}
 }
- 
-export default useFetch;
+
+export  default useFetch;
