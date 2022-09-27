@@ -33,7 +33,7 @@ const Login = ({getUserId}) => {
                     <div className="row">
                    
                     <button className="waves-effect waves-light btn" onClick={ (event) => {event.preventDefault(); submitForm() }}>submit</button>
-                    <Link to ='/home'>go to home</Link>
+                    {/* <Link to ='/home'>go to home</Link> */}
                     </div>
                 </form>
             </div>

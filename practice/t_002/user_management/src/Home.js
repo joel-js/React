@@ -1,14 +1,12 @@
-import React,{ useContext } from 'react';
-import {currentUser} from './CurrentUser';
-
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css"; 
+import "primeicons/primeicons.css";   
+import { Button } from 'primereact/button';
 const Home = () => {
-    const userId = useContext(currentUser);
-    console.log("insisde home : "+ userId)
     return (
-        <div className="home">
+        <div className="Home">
             <h2>Home</h2>
-            <br />
-            <h2>{userId}</h2>
+            <Button label="Add" className = "p-button-raised p-button-text" icon="pi pi-plus" />
         </div>
     );
 }

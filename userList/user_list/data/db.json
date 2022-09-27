@@ -1,0 +1,34 @@
+{
+    "userlist":[
+        {
+            "id": 1,
+            "name": "JJ",
+            "age": 29,
+            "designation": "entertainer"
+        },
+        {
+            "id": 2,
+            "name": "Tobi",
+            "age": 29,
+            "designation": "manager"
+        },
+        {
+            "id": 3,
+            "name": "Vikk",
+            "age": 27,
+            "designation": "CFO"
+        },
+        {
+            "id": 4,
+            "name": "Josh",
+            "age": 30,
+            "designation": "CMO"
+        },
+        {
+            "id": 5,
+            "name": "Simon",
+            "age": 30,
+            "designation": "CEO"
+        }
+    ]
+}
