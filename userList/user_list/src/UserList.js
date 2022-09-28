@@ -2,10 +2,19 @@
 
 import UserRow from './UserRow';
 import useFetch from "./useFetch";
+import { Link } from 'react-router-dom';
+
 
 const UserList = () => {
     const { data: rows,setData:setRows,error} = useFetch('http://localhost:8000/userlist')
+    const deleteItem = event => {
 
+        const id = event.target.getAttribute("postid");
+        const newRows = rows.filter( row => (row.id+"") !== id )
+        setRows(newRows)
+        
+    }
+    console.log(rows)
     return (
         <div className="userList">
             <h2>User List</h2>
@@ -19,12 +28,12 @@ const UserList = () => {
                                 <th>Name</th>
                                 <th>Age</th>
                                 <th>Designation</th>
-                                <th><button className='waves-effect waves-light btn green'><i className="material-icons left">add</i>Add</button></th>
+                                <th><Link to="/user/add" className='waves-effect waves-light btn green'><i className="material-icons left">add</i>Add</Link></th>
                             </tr>
                         </thead>
 
                         
-                        { rows && <UserRow rows={ rows } setRows ={ setRows } ></UserRow>}
+                        { rows && <UserRow rows={ rows } setRows ={ setRows } deleteItem= {deleteItem}></UserRow>}
                         
                     </table>
                 </div>

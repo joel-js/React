@@ -1,9 +1,9 @@
 import useFetch from "./useFetch";
 import Delete from './Delete'
-const UserRow = ({ rows,setRows,error }) => {
-    const deleteItem = (event) => {
-        const newRow = rows.filter( () => event.target)
-    }
+import { useNavigate } from "react-router-dom";
+
+const UserRow = ({ rows, setRows, error, deleteItem }) => {
+    const navigate  = useNavigate();
     return (
         
         <tbody>
@@ -13,7 +13,9 @@ const UserRow = ({ rows,setRows,error }) => {
                             <td> {row.name} </td>
                             <td> {row.age} </td>
                             <td> {row.designation} </td>
-                            <td> <button className="waves-effect waves-light btn red" onClick={(event) => {event.preventDefault(); deleteItem(event); } }>Delete</button></td>
+                            <td> <button className="waves-effect waves-light btn red" postid = {row.id} onClick={(event) => {event.preventDefault(); deleteItem(event); } }>Delete</button></td>
+                            <td> <button className="waves-effect waves-light btn blue" postid = {row.id} onClick ={ () => navigate('/user/'+(row.id+"")) }>view</button></td>
+
                         </tr>
                         
             } )}
