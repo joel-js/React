@@ -9,12 +9,13 @@ const AddUser = () => {
     const navigate  = useNavigate();
 
     useEffect( (item) => {
-        if( name == ""){
-
+        if( name === ""){
+            
         }
     },[name, age, designation])
 
-    const submitForm = () => {
+    const submitForm = event => {
+        event.preventDefault();
         console.log(typeof(name))
         fetch('http://localhost:8000/userlist',{
      
@@ -40,25 +41,25 @@ const AddUser = () => {
                 <form className="col s8 offset-s4">
                     <div className="row">
                         <div className="input-field col s6">
-                            <input key="name" type="text" className="validate" onBlur ={ (event) => setName(event.target.value)}/>
+                            <input key="name" type="text" className="validate" onBlur ={ event => setName(event.target.value)}/>
                             <label >Name</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
-                            <input key="age" type="text" className="validate"  onBlur ={ (event) => setAge(event.target.value)} />
+                            <input key="age" type="text" className="validate"  onBlur ={ event => setAge(event.target.value)} />
                             <label >Age</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
-                            <input key="designation" type="text" className="validate"  onBlur ={ (event) => setDesignation(event.target.value)}/>
+                            <input key="designation" type="text" className="validate"  onBlur ={ event => setDesignation(event.target.value)}/>
                             <label >Designation</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
-                            <button className="waves-effect waves-light btn" onClick={ (event) => {event.preventDefault(); submitForm();}}><i className="material-icons left">chevron_right</i>submit</button>
+                            <button className="waves-effect waves-light btn" onClick={ submitForm }><i className="material-icons left">chevron_right</i>submit</button>
                         </div>
                     </div>
                 </form>

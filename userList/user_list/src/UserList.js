@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 
 
 const UserList = () => {
-    const { data: rows,setData:setRows,error} = useFetch('http://localhost:8000/userlist')
+    const { data: rows,setData:setRows} = useFetch('http://localhost:8000/userlist')
+   
     const deleteItem = event => {
-
+        event.preventDefault();
         const id = event.target.getAttribute("postid");
         const newRows = rows.filter( row => (row.id+"") !== id )
-        setRows(newRows)
+
+        setRows( newRows )
         
     }
     console.log(rows)

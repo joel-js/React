@@ -4,7 +4,7 @@ import UserDetail from './UserDetail';
 import UserList from './UserList';
 import AddUser from './AddUser';
 import NotFound from './NotFound';
-import Modal from './Delete';
+
 function App() {
   return (
     <div className="App">
