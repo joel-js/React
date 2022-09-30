@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const UserList = () => {
     const { data: rows,setData:setRows} = useFetch('http://localhost:8000/userlist')
-   
+    console.log("Type of rows ; "+typeof(rows))
     const deleteItem = event => {
         event.preventDefault();
         const id = event.target.getAttribute("postid");
@@ -30,7 +30,7 @@ const UserList = () => {
                                 <th>Name</th>
                                 <th>Age</th>
                                 <th>Designation</th>
-                                <th><Link to="/user/add" className='waves-effect waves-light btn green'><i className="material-icons left">add</i>Add</Link></th>
+                                <th><Link to="/users/add" className='waves-effect waves-light btn green'><i className="material-icons left">add</i>Add</Link></th>
                             </tr>
                         </thead>
 

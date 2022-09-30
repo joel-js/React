@@ -2,14 +2,9 @@ import { Link,useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 const UserDetail = () => {
     let {id} = useParams();
-    
+
     console.log(typeof(id))
-    // id +=""
     const { data: data} = useFetch('http://localhost:8000/userlist/'+id)
-    let userData =data
-    // if(data){
-    //     console.log(data.id)
-    // }
     console.log(data?.id);
     return (
         <div className="userDetail">

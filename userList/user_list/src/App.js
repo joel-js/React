@@ -4,17 +4,23 @@ import UserDetail from './UserDetail';
 import UserList from './UserList';
 import AddUser from './AddUser';
 import NotFound from './NotFound';
+import Posts from './Posts';
+import PostDetail from './PostDetail';
+import AddPost from './AddPost';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+          
           <Route path ='/' element={ <Navigate to='/userList' /> } />
           <Route path ='/userlist' element={ <UserList />} />
           <Route path ='/user/:id' element={ <UserDetail /> } />
-          <Route path ='/user/add' element={ <AddUser /> } />
-          
+          <Route path ='/users/add' element={ <AddUser /> } />
+          <Route path ='/posts' element={ <Posts />} />
+          <Route path ='/posts/add' element={ <AddPost />} />
+          <Route path ='/post/:id' element={ <PostDetail />} />
 
           <Route path ='*' element={ <NotFound /> } />
 
