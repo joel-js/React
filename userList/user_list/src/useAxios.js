@@ -15,7 +15,7 @@ const useAxios = (url) => {
         .catch(err => console.log(err))
     } ,[url])
 
-   return {data}
+   return {data, setData}
 }
  
 export default useAxios;
