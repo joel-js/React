@@ -1,9 +1,12 @@
-import useAxios from "./useAxios";
+
 import { Link } from "react-router-dom";
 import EachPost from "./EachPost"
+
+import { getPosts } from "./Services";
 const Posts = () => {
     
-    const {data:rows,setData:setRows} = useAxios('https://jsonplaceholder.typicode.com/posts');
+    const {data:rows,setData:setRows} = getPosts();
+    
     
     const deleteItem = event => {
         event.preventDefault();

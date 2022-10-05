@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const UserRow = (props) => {
+const UserRow = props => {
     const navigate  = useNavigate();
     const view = event => {
         const id = event.target.getAttribute('postid');
