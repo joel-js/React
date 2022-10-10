@@ -1,20 +1,12 @@
 
 import { Link } from "react-router-dom";
 import EachPost from "./EachPost"
+import PostsContainer from "./PostsContainer";
 
-import { getPosts } from "./Services";
 const Posts = () => {
     
-    const {data:rows,setData:setRows} = getPosts();
-    
-    
-    const deleteItem = event => {
-        event.preventDefault();
-        const id = event.target.getAttribute("postid");
-        const newRows = rows.filter( row => (row.id+"") !== id )
-
-        setRows( newRows )
-    }
+    const {rows,deleteItem} = PostsContainer();
+   
     return (
         <div className="Posts">
             <h2>Posts</h2>

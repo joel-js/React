@@ -16,7 +16,7 @@ const UserRow = props => {
                             <td> {row.title} </td>
                             <td> <button className="waves-effect waves-light btn red" postid = {row.id} onClick={ props.deleteItem } >Delete</button></td>
                             <td> <button className="waves-effect waves-light btn blue" postid = {row.id} onClick ={ view }>view</button></td>
-
+                            
                         </tr>
                         
             } )}
