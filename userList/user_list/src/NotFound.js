@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react'
 const NotFound = () => {
     
     const [rows,setRows] = useState();
-    useEffect( () => {
+    // useEffect( () => {
         
-        getPostsPreview().then(data => setRows(data))
-    },[])
+    //     getPostsPreview().then(data => setRows(data))
+    // },[])
+    // console.log(rows)
+    useEffect(() => setRows(5),[])
     console.log(rows)
     return (
         <div className="Notfound">

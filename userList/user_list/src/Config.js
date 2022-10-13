@@ -24,7 +24,7 @@ export const axiosPostsPreview = async (url) => {
     );
     const comments = (await Promise.all(urls)).map((comment) => comment.data);
     console.log((comments))
-    debugger
+    
     const newPosts = posts.map((post) => ({
       ...post,
       comments: comments[post.id],
