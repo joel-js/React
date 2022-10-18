@@ -23,11 +23,11 @@ const IcecreamView = () => {
     <div className="IcecreamView">
       <h2>No of Icecreams: {numOfIcecreams}</h2>
       <Button
-        variant="primary"
-        kind="elevated"
-        size="big"
-        colorMode="dark"
-        colorConfig= {{backgroundColor: "black",color:"white",edgeColors : { right: '#F05E4B', bottom: '#F05E4B' }}}
+        variant     = "primary"
+        kind        = "elevated"
+        size        = "big"
+        colorMode   = "dark"
+        colorConfig = {{backgroundColor: "black",color:"white",edgeColors : { right: '#F05E4B', bottom: '#F05E4B' }}}
         
         onClick={ order }
       >
@@ -35,21 +35,21 @@ const IcecreamView = () => {
       </Button> 
       <br /> <br />
       <InputField
-                type="text"
-                label="Restock by"
-                placeholder="0"
-                id="text_field"
-                autoFocus
-                onBlur      ={ (e) => setRestockBy(e.target.value)}
+        type        ="text"
+        label       ="Restock by"
+        placeholder ="0"
+        id          ="text_field"
+        autoFocus
+        onBlur      ={ (e) => setRestockBy(e.target.value)}
       />
 
       <Button
-        variant="primary"
-        kind="elevated"
-        size="big"
-        colorMode="dark"
-        colorConfig= {{backgroundColor: "black",color:"white",edgeColors : { right: '#4FE3A3', bottom: '#4FE3A3' }}}
-        onClick={ restock }
+        variant     = "primary"
+        kind        = "elevated"
+        size        = "big"
+        colorMode   = "dark"
+        colorConfig = {{backgroundColor: "black",color:"white",edgeColors : { right: '#4FE3A3', bottom: '#4FE3A3' }}}
+        onClick     = { restock }
       >
         Restock
       </Button> 
