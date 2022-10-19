@@ -4,7 +4,9 @@ import Board from './Board';
 function App() {
   return (
     <div className="App">
-      <Board />
+      <center>
+        <Board />
+      </center>
     </div>
   );
 }

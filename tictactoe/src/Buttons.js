@@ -10,14 +10,16 @@ const Buttons = ({ play, box, id }) => {
         size           = "big"
         colorMode      = "dark"
         colorConfig    = {{
-                            backgroundColor: "black",
-                            color: "white",
-                            edgeColors: { right: "white", bottom: "white" },
-                         }}
+          backgroundColor: "black",
+          color: "white",
+          edgeColors: { right: box[parseInt(id)].color, bottom: box[parseInt(id)].color },
+        }}
         onClick       = {() => play(id)}
         fullWidth
+        
+        
       >
-        {box[parseInt(id)]}
+        {box[parseInt(id)].val}
       </Button>
       
     </div>

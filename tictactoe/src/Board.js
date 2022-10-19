@@ -1,6 +1,6 @@
 import BoardContainer from "./BoardContainer";
-import { Button } from "@cred/neopop-web/lib/components";
 import Buttons from "./Buttons";
+
 
 const Board = () => {
 
@@ -8,6 +8,8 @@ const Board = () => {
 
   return (
     <div className="Board">
+      <h2> Tic Tac Toe</h2>
+      <br /><br />
       <table>
         <tbody>
           <tr>
