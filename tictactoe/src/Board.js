@@ -7,25 +7,27 @@ const Board = () => {
   const { box, play } = BoardContainer();
 
   return (
-    <div className="buttonContainer">
     <div className="Board">
-      <Button
-        id             = "0"
-        variant        = "primary"
-        kind           = "elevated"
-        size           = "big"
-        colorMode      = "dark"
-        colorConfig    = {{
-                            backgroundColor: "black",
-                            color: "white",
-                            edgeColors: { right: "white", bottom: "white" },
-                         }}
-        onClick       = {() => play(0)}
-        fullWidth
-      >
-        {box[parseInt('0')]}
-      </Button>
-      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td><Buttons play = {play} box ={box} id = '0' /></td>
+            <td><Buttons play = {play} box ={box} id = '1' /></td>
+            <td><Buttons play = {play} box ={box} id = '2' /></td>
+          </tr>
+          <tr>
+            <td><Buttons play = {play} box ={box} id = '3' /></td>
+            <td><Buttons play = {play} box ={box} id = '4' /></td>
+            <td><Buttons play = {play} box ={box} id = '5' /></td>
+          </tr>
+          <tr>
+            <td><Buttons play = {play} box ={box} id = '6' /></td>
+            <td><Buttons play = {play} box ={box} id = '7' /></td>
+            <td><Buttons play = {play} box ={box} id = '8' /></td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
   );
 };
