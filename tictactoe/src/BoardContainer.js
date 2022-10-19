@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const BoardContainer = () => {
   const [box,setBox]        = useState(Array(9).fill({val:'',color:'white'}));
   const [click,setClick]    = useState(false); 
-  const [result,setResult]  = useState([false,false]);
+  const [result,setResult]  = useState([false,false,click]);
   const win = [
     [0,1,2],
     [3,4,5],
@@ -40,28 +40,24 @@ const play = (id) => {
   if (newBox[parseInt(id)].val == '')
     if(click) newBox.splice(parseInt(id),1,{ val: 'X', color: 'yellow' })
     else      newBox.splice(parseInt(id),1,{ val: 'O', color: 'orange' })
-    const result = game(newBox)
-    console.log(result)
+  const result = game(newBox)
 
-    if(result[0] == 1){
-      console.log("won")
-      let i = result[1];
-      for(let j = 0; j<3; j++ ){
-        let retain_val = newBox[win[i][j]].val
-        newBox.splice(win[i][j],1,{ val: retain_val, color: 'green' })
-        setResult([true,false])
-      }
-      
-    } 
-    else if(result[0] == -1) setResult([true,true])
+  if(result[0] == 1){
+    let i = result[1];
+    for(let j = 0; j<3; j++ ){
+      let retain_val = newBox[win[i][j]].val
+      newBox.splice(win[i][j],1,{ val: retain_val, color: 'green' })
+      setResult([true,true,click])
+    }
     
-    setBox(newBox)
-  console.log(newBox)
+  } 
+  else if(result[0] == -1) setResult([true,false,click])
+  setBox(newBox)
   
   setClick(!click)
 }
 
-return {box,play};
+return {box,play,result};
 }
  
 export default BoardContainer;

@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 // import { Provider } from 'react-redux';
 // import store from './app/store'
-// import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
-// import "primereact/resources/primereact.min.css";                  //core css
-// import "primeicons/primeicons.css";                                //icons
+import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";                                //icons
 // import {components} from "@cred/neopop-web/lib/components"
 // import {primitives} from "@cred/neopop-web/lib/primitives"
 // import {hooks} from "@cred/neopop-web/lib/hooks"
