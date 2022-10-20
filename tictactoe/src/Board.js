@@ -31,7 +31,7 @@ const Board = () => {
           </tr>
         </tbody>
       </table>
-      {result[0] && result[1] && <Confirm /> }
+      {result[0] && result[1] && <h2>Game Won</h2> }
       {result[0] && !result[1] && <h2>Game Tied</h2> }
     </div>
   );
