@@ -1,0 +1,9 @@
+{
+  "user":{
+    "id": 1,
+    "name": "user-1"
+  },
+  "login":{
+    "isLoggedIn":true
+  }
+}

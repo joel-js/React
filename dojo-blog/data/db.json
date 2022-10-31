@@ -30,5 +30,8 @@
       "author": "mario",
       "id": 5
     }
-  ]
+  ],
+  "login": {
+    "isLoggedIn": true
+  }
 }
