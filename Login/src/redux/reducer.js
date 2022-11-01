@@ -7,9 +7,11 @@ const initialState = {
 
 const reducer = (state = initialState,action) => {
   switch(action.type){
+    
     case LOGIN_SUCCESS: 
-    const {logged_in} = action
-    return {...state, logged_in}
+      const logged_in = JSON.stringify(action.payload)
+      return {...state, logged_in}
+    
     default: return state
   }
 }

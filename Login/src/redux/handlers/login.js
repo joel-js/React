@@ -1,5 +1,5 @@
 import { call,put } from 'redux-saga/effects';
-import { login } from '../actions/login';
+import { login_success } from '../actions/login';
 import { loginCred } from '../requests/login';
 
 export function* handleLogin(action){
@@ -7,8 +7,7 @@ export function* handleLogin(action){
     
     const res     = yield call(loginCred);
     const {data}  = res;
-    console.log(data)
-    yield put(login(data)) 
+    yield put(login_success(data)) 
 
   } catch(error){
     console.log(error);

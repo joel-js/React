@@ -6,9 +6,10 @@ export const login_request = () => {
   }
 }
 
-export const login_success = () => {
+export const login_success = (token  = {isLoggedIn : false}) => {
   return {
-    type  : LOGIN_SUCCESS
+    type      : LOGIN_SUCCESS,
+    payload   : token  
   }
 }
 
