@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
   switch(action.type){
 
     case CURR_USER_SUCCESS :
-      const data = JSON.stringify(action.payload)
+      const data = (action.payload)
       return {...state, data}
 
     default:
