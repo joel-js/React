@@ -1,8 +1,7 @@
-import { LOGIN_SUCCESS } from "./types";
+import { LOGIN_SUCCESS } from "../types/login";
 
 const initialState = {
-  logged_in : false,
-  user      : {}     
+  logged_in : false, 
 }
 
 const reducer = (state = initialState,action) => {

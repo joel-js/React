@@ -1,4 +1,6 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR } from '../types';
+import {  LOGIN_REQUEST, 
+          LOGIN_SUCCESS, 
+          LOGIN_ERROR } from '../types/login';
 
 export const login_request = () => {
   return {

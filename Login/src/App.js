@@ -3,7 +3,7 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {login, login_request} from './redux/actions/login'
 function App() {
-  const logged_in  = useSelector(state => state.name.logged_in)
+  const logged_in  = useSelector(state => state.login.logged_in)
   const dispatch  = useDispatch();
   return (
     <div className="App">
